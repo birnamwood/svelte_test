@@ -1,11 +1,18 @@
 <script>
-	export let name;
+import Router from 'svelte-spa-router'
+import Home from './components/home.svelte'
+import Showpage from './components/showpage.svelte'
+
+const routes = {
+    '/': Home,
+    '/showpage/': Showpage,
+}
+	// export let name;
 </script>
 
 <style>
-	h1 {
-		color: purple;
-	}
 </style>
 
-<h1>Hello {name}!</h1>
+<body>
+    <Router {routes}/>
+</body>
